@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Istanbul Photo-Gallery</title>
 
 
@@ -11,6 +13,65 @@
 </head>
 <body>
 
+    <div class="container">
+        <h1 class="my-4 text-center">Resim Galerisi</h1>
+        <div class="row">
+            <!-- Gallery Images -->
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul1.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul1.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul2.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul2.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul3.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul3.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul4.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul4.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul5.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul5.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul6.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul6.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul7.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul7.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul8.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul8.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul9.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul9.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul10.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul10.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul11.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul11.jpg">
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+                <img src="istanbul12.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-img-src="istanbul12.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Resim</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modalImage">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -18,8 +79,16 @@
 
 
 
-
-
+    <script>
+        $(document).ready(function () {
+            $('#imageModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var imgSrc = button.data('img-src'); // Extract info from data-* attributes
+                var modal = $(this);
+                modal.find('.modal-body img').attr('src', imgSrc);
+            });
+        });
+    </script>
 
 
 
